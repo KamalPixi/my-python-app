@@ -1,10 +1,12 @@
 from flask import Flask
-
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return 'Hello, World! My first Python Flask app is running.'
+@app.route("/")
+def home():
+    return {
+        "status": "online",
+        "message": "Hello from Flask inside Incus!"
+    }
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run()
